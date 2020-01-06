@@ -1,5 +1,6 @@
 package com.app.zcoolsupport
 
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModel
 import com.app.zcoolsupport.repo.Repository
@@ -36,13 +37,15 @@ class LoginViewmodel(val repository: Repository):ViewModel() {
                         response: Response<LoginResponse>
                     ) {
                         if(response.isSuccessful) {
+                            Log.e("error",response?.body().toString()!!)
                             response.body()?.response.let {
-                                loginInterface?.OnSuccess(response?.body()!!)
+                                loginInterface?.OnSuccess(it!!)
                                 return@let
                             }
                             loginInterface?.onFailour(response.body()?.message!!)
                         }else{
-                            val jsonobj=JSONObject(response?.errorBody().toString())
+//                            Log.e("error",response?.errorBody()?.string())
+                            val jsonobj=JSONObject(response?.errorBody()?.string())
                             loginInterface?.onFailour(jsonobj.getString("message"))
                         }
                     }
