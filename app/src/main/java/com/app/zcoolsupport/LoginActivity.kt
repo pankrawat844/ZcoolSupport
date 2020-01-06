@@ -28,8 +28,8 @@ class LoginActivity : AppCompatActivity(),KodeinAware,LoginInterface {
 
     }
 
-    override fun OnSuccess(msg: LoginResponse) {
-        Toast.makeText(this, msg.message, Toast.LENGTH_SHORT).show()
+    override fun OnSuccess(msg: LoginResponse.Response) {
+        Toast.makeText(this, msg.userid, Toast.LENGTH_SHORT).show()
     }
 
     override fun onFailour(msg: String) {
