@@ -1,6 +1,12 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.app.zcoolsupport.LoginViewmodel" />
+    </data>
 
     <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#4DB6AC"
@@ -42,7 +48,7 @@
                 android:fontFamily="@font/roboto_light"
                 android:hint="Username"
                 android:inputType="text"
-                android:text=""
+                android:text="@={viewmodel.userid}"
                 android:textColor="#fff"
                 android:textColorHint="#ffffff" />
 
@@ -60,7 +66,7 @@
                 android:fontFamily="@font/roboto_light"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:text=""
+                android:text="@={viewmodel.password}"
                 android:textColor="#fff"
                 android:textColorHint="#fff" />
 
@@ -85,6 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="32dp"
+                android:onClick="@{viewmodel::onSubmit}"
                 >
 
                 <ImageView
@@ -120,3 +127,4 @@
             android:layout_centerInParent="true"
             android:visibility="gone" />
     </RelativeLayout>
+</layout>
