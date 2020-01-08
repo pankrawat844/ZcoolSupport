@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4DB6AC"
     tools:context=".MainActivity">
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,6 +13,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toTopOf="@+id/raise_ticket"/>
+
     <Button
         android:id="@+id/raise_ticket"
         android:layout_width="300dp"

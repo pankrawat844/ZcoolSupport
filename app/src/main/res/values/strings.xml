@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Zcool Support</string>
+    <array name="complaint_type">
+        <item>AMC</item>
+        <item>Warranty</item>
+    </array>
 </resources>
