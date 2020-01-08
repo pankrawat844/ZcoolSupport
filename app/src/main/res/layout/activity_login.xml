@@ -9,7 +9,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#4DB6AC"
+        android:background="#fff"
         android:orientation="vertical">
 
         <LinearLayout
@@ -36,7 +36,7 @@
                 android:layout_marginTop="18dp"
                 android:fontFamily="@font/maven_pro_regular"
                 android:text="Please sign In to continue."
-                android:textColor="#fff"
+                android:textColor="#000"
                 android:textSize="18dp" />
 
             <EditText
@@ -49,8 +49,8 @@
                 android:hint="Username"
                 android:inputType="text"
                 android:text="@={viewmodel.userid}"
-                android:textColor="#fff"
-                android:textColorHint="#ffffff" />
+                android:textColor="#000"
+                android:textColorHint="#000" />
 
             <View
                 android:layout_width="match_parent"
@@ -67,8 +67,8 @@
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:text="@={viewmodel.password}"
-                android:textColor="#fff"
-                android:textColorHint="#fff" />
+                android:textColor="#000"
+                android:textColorHint="#000" />
 
             <View
                 android:layout_width="match_parent"
