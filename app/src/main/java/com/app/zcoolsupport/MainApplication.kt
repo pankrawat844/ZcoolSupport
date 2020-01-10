@@ -1,6 +1,8 @@
 package com.app.zcoolsupport
 
 import android.app.Application
+import com.app.zcoolsupport.raiseticket.RaiseTicketViewModel
+import com.app.zcoolsupport.raiseticket.RaiseTicketViewmodelFactory
 import com.app.zcoolsupport.repo.Repository
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
@@ -16,6 +18,9 @@ class MainApplication :Application(),KodeinAware{
         bind() from singleton { LoginViewmodelFactory(instance()) }
         bind() from singleton { Repository(instance()) }
         bind() from singleton { MyApi() }
+
+        bind() from singleton { RaiseTicketViewmodelFactory(instance()) }
+        bind() from singleton { RaiseTicketViewModel(instance()) }
     }
 
 

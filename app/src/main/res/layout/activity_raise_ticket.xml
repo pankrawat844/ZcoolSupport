@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.app.zcoolsupport.raiseticket.RaiseTicketViewModel" />
+    </data>
+<ScrollView
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,57 +37,60 @@
             android:textSize="18dp" />
 
         <EditText
-            android:id="@+id/class_name"
+            android:id="@+id/name"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
             android:layout_marginTop="40dp"
             android:background="#00000000"
             android:fontFamily="@font/roboto_light"
             android:inputType="text"
             android:hint="Name"
+            android:textSize="15dp"
             android:textColor="#000"
             android:textColorHint="#d3d3d3" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_marginTop="9dp"
             android:background="#b9b9b9" />
 
-        <EditText
-            android:id="@+id/company"
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/company_name"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
             android:background="#00000000"
             android:fontFamily="@font/roboto_light"
-            android:hint="Com Name"
+            android:hint="Company Name"
+            app:ms_padding_left="0dp"
+            app:ms_padding_right="0dp"
+            app:ms_padding_top="0dp"
+            app:ms_padding_bottom="0dp"
             android:inputType="text"
             android:textColor="#000"
+            app:ms_popup_padding_left="2dp"
             android:textColorHint="#d3d3d3" />
-
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_marginTop="9dp"
             android:background="#b9b9b9" />
         <EditText
             android:id="@+id/phone_no"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
             android:background="#00000000"
             android:fontFamily="@font/roboto_light"
             android:hint="Phone Number"
             android:text=""
-            android:inputType="text"
+            android:inputType="phone"
+            android:textSize="15dp"
             android:textColor="#000"
             android:textColorHint="#d3d3d3" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_marginTop="9dp"
             android:background="#b9b9b9" />
         <com.jaredrummler.materialspinner.MaterialSpinner
             android:id="@+id/complaint_type"
@@ -92,7 +102,9 @@
             android:hint="Complaint Type"
             app:ms_padding_left="0dp"
             app:ms_padding_right="0dp"
-            android:text="@={data.password}"
+            app:ms_padding_top="0dp"
+            app:ms_padding_bottom="0dp"
+            app:ms_popup_padding_left="2dp"
             android:inputType="text"
             android:textColor="#000"
             android:textColorHint="#d3d3d3" />
@@ -101,23 +113,48 @@
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#b9b9b9" />
-        <EditText
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/priority"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
             android:background="#00000000"
             android:fontFamily="@font/roboto_light"
             android:hint="Priority"
-            android:text=""
+            app:ms_padding_left="0dp"
+            app:ms_padding_right="0dp"
+            app:ms_padding_top="0dp"
+            app:ms_padding_bottom="0dp"
+            app:ms_popup_padding_left="2dp"
             android:inputType="text"
             android:textColor="#000"
             android:textColorHint="#d3d3d3" />
-
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_marginTop="9dp"
             android:background="#b9b9b9" />
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/type"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="#00000000"
+            android:fontFamily="@font/roboto_light"
+            android:hint="Type"
+            app:ms_padding_left="0dp"
+            app:ms_padding_right="0dp"
+            app:ms_padding_top="0dp"
+            app:ms_padding_bottom="0dp"
+            app:ms_popup_padding_left="2dp"
+            android:inputType="text"
+            android:textColor="#000"
+            android:textColorHint="#d3d3d3" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#b9b9b9" />
+
 
         <EditText
             android:id="@+id/complaint"
@@ -128,6 +165,8 @@
             android:fontFamily="@font/roboto_light"
             android:hint="Complaint"
             android:text=""
+            android:textSize="15dp"
+
             android:padding="5dp"
             android:gravity="start"
             android:inputType="text"
@@ -156,7 +195,7 @@
             >
 
             <Button
-                android:id="@+id/logout"
+                android:id="@+id/submit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Submit"
@@ -184,3 +223,4 @@
         android:visibility="gone" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
+</layout>
