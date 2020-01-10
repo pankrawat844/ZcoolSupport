@@ -2,6 +2,8 @@ package com.app.zcoolsupport
 
 import com.app.zcoolsupport.response.LoginResponse
 import com.app.zcoolsupport.response.RaiseTicketResponse
+import com.app.zcoolsupport.utils.NetworkConnectionInterceptor
+import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Response
@@ -15,9 +17,15 @@ import retrofit2.http.POST
 interface MyApi {
 
     companion object{
-        operator fun invoke():MyApi
+        operator fun invoke(
+            networkConnectionInterceptor: NetworkConnectionInterceptor
+        ):MyApi
         {
+            val okHttpClient = OkHttpClient.Builder()
+                .addInterceptor(networkConnectionInterceptor)
+                .build()
             return Retrofit.Builder()
+                .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl("https://zcool.mobi/admin_panel/api/")
                 .build()
@@ -43,5 +51,12 @@ interface MyApi {
         @Field("complaint") complaint:String,
         @Field("userid") userid:String
 
+    ):Call<RaiseTicketResponse>
+
+    fun sendRequest(
+        @Field("name")name:String,
+        @Field("client") client:String,
+        @Field("phoneno") phone:String,
+        @Field("email") email:String
     ):Call<RaiseTicketResponse>
 }

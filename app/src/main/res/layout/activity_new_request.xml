@@ -5,17 +5,18 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.app.zcoolsupport.raiseticket.RaiseTicketViewModel" />
+            type="com.app.zcoolsupport.request.NewRequestViewModel" />
     </data>
     <ScrollView
 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
         <androidx.constraintlayout.widget.ConstraintLayout
 
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
             android:orientation="vertical"
             >
 
@@ -46,6 +47,7 @@
                     android:fontFamily="@font/roboto_light"
                     android:inputType="text"
                     android:hint="Name"
+                    android:text="@={viewmodel.name}"
                     android:textSize="15dp"
                     android:textColor="#000"
                     android:textColorHint="#d3d3d3" />
@@ -68,6 +70,7 @@
                     app:ms_padding_top="0dp"
                     app:ms_padding_bottom="0dp"
                     android:inputType="text"
+                    android:text="@={viewmodel.client}"
                     android:textColor="#000"
                     app:ms_popup_padding_left="2dp"
                     android:textColorHint="#d3d3d3" />
@@ -83,7 +86,7 @@
                     android:background="#00000000"
                     android:fontFamily="@font/roboto_light"
                     android:hint="Phone Number"
-                    android:text=""
+                    android:text="@={viewmodel.phoneno}"
                     android:inputType="phone"
                     android:textSize="15dp"
                     android:textColor="#000"
@@ -94,7 +97,7 @@
                     android:layout_height="2dp"
                     android:background="#b9b9b9" />
                 <EditText
-                    android:id="@+id/complaint_type"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="5dp"
@@ -107,6 +110,7 @@
                     app:ms_padding_bottom="0dp"
                     app:ms_popup_padding_left="2dp"
                     android:inputType="text"
+                    android:text="@={viewmodel.email}"
                     android:textColor="#000"
                     android:textColorHint="#d3d3d3" />
 
@@ -125,6 +129,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="25dp"
                     android:layout_marginBottom="20dp"
+                    android:onClick="@{viewmodel::sendRequest}"
                     app:layout_constraintTop_toBottomOf="@+id/complaint"
 
                     >

@@ -21,4 +21,8 @@ class Repository(val myApi: MyApi) {
     {
         return myApi.saveComplaint(name,company,phoneno,complaint_type, priority,type, complaint, userid)
     }
+
+    suspend fun sendRequest(name: String,client:String,phoneno: String,email:String):Call<RaiseTicketResponse>{
+        return myApi.sendRequest(name,client,phoneno,email)
+    }
 }

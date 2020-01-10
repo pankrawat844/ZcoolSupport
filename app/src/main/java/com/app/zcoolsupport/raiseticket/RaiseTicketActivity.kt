@@ -76,6 +76,7 @@ class RaiseTicketActivity : AppCompatActivity(),KodeinAware,RaiseTicketListener 
 
     override fun onSuccess(msg: String) {
         progress_bar.hide()
+        finish()
         Toast.makeText(this@RaiseTicketActivity, msg, Toast.LENGTH_SHORT).show()
     }
 

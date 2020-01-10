@@ -5,6 +5,8 @@ import android.view.View
 import androidx.lifecycle.ViewModel
 import com.app.zcoolsupport.repo.Repository
 import com.app.zcoolsupport.response.LoginResponse
+import com.app.zcoolsupport.utils.ApiException
+import com.app.zcoolsupport.utils.NoInternetException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -26,6 +28,8 @@ class LoginViewmodel(val repository: Repository):ViewModel() {
         else
         {
             loginInterface?.onStarted()
+            try {
+
             CoroutineScope(Dispatchers.Main).launch {
                 repository.getLogin(userid!!,password!!).enqueue(object :Callback<LoginResponse>{
                     override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
@@ -51,6 +55,12 @@ class LoginViewmodel(val repository: Repository):ViewModel() {
                     }
 
                 })
+            }
+            }catch (e:NoInternetException)
+            {
+                loginInterface?.onFailour(e.message!!)
+            }catch (e:ApiException){
+                loginInterface?.onFailour(e.message!!)
             }
         }
 
