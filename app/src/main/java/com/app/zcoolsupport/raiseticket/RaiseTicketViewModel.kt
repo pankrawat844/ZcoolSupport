@@ -13,6 +13,7 @@ import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.lang.Exception
 
 class RaiseTicketViewModel(val repository: Repository):ViewModel() {
     var name:String?=null
@@ -62,26 +63,47 @@ class RaiseTicketViewModel(val repository: Repository):ViewModel() {
             return
 
         }
-//        CoroutineScope(Dispatchers.Main).launch {
-            repository.saveComplaint(name!!,company!!,phone!!,complaint_type!!,priority!!,type!!,complaint!!,userid!!).enqueue(object :Callback<RaiseTicketResponse>{
-                override fun onFailure(call: Call<RaiseTicketResponse>, t: Throwable) {
-                    raiseTicketListener?.onFailour(t.message!!)
+       try {
 
-                }
 
-                override fun onResponse(
-                    call: Call<RaiseTicketResponse>,
-                    response: Response<RaiseTicketResponse>
-                ) {
-                    response.body().let {
+           CoroutineScope(Dispatchers.Main).launch {
+               repository.saveComplaint(
+                   name!!,
+                   company!!,
+                   phone!!,
+                   complaint_type!!,
+                   priority!!,
+                   type!!,
+                   complaint!!,
+                   userid!!
+               ).enqueue(object : Callback<RaiseTicketResponse> {
+                   override fun onFailure(call: Call<RaiseTicketResponse>, t: Throwable) {
+                       raiseTicketListener?.onFailour(t.message!!)
 
-                        raiseTicketListener?.onCompaniesSuccess(list!!)
-                        return@let
-                    }
-                    raiseTicketListener?.onFailour("Companies not Loaded.")
-                }
+                   }
 
-            })
-//        }
+                   override fun onResponse(
+                       call: Call<RaiseTicketResponse>,
+                       response: Response<RaiseTicketResponse>
+                   ) {
+                       if(response.isSuccessful) {
+                               raiseTicketListener?.onSuccess(response.body()?.message!!)
+
+//                           raiseTicketListener?.onFailour(response.message())
+                       }else
+                       {
+                           raiseTicketListener?.onFailour(
+                               JSONObject(response.errorBody()?.string()).getString(
+                                   "message"
+                               )
+                           )
+                       }
+                   }
+
+               })
+           }
+       }catch (e:Exception){
+           raiseTicketListener?.onFailour(e.message!!)
+       }
     }
 }

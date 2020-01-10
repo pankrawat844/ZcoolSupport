@@ -31,9 +31,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="18dp"
-            android:fontFamily="@font/maven_pro_regular"
-            android:text="Please fill the form."
+            android:fontFamily="@font/maven_pro_bold"
+            android:text="Please fill the Complaint."
             android:textColor="#444444"
+            android:textAllCaps="true"
             android:textSize="18dp" />
 
         <EditText
