@@ -9,6 +9,7 @@ import com.app.zcoolsupport.utils.NoInternetException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import okhttp3.ResponseBody
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
@@ -41,18 +42,20 @@ class NewRequestViewModel(val repository: Repository) : ViewModel() {
             newRequestListener?.onStarted()
             CoroutineScope(Dispatchers.Main).launch {
                 repository.sendRequest(name!!, client!!, phoneno!!, email!!)
-                    .enqueue(object : Callback<RaiseTicketResponse> {
-                        override fun onFailure(call: Call<RaiseTicketResponse>, t: Throwable) {
+                    .enqueue(object : Callback<ResponseBody> {
+                        override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                             newRequestListener?.onFailure(t.message!!)
                         }
 
                         override fun onResponse(
-                            call: Call<RaiseTicketResponse>,
-                            response: Response<RaiseTicketResponse>
+                            call: Call<ResponseBody>,
+                            response: Response<ResponseBody>
                         ) {
                             if (response.isSuccessful) {
                                 response.body().let {
-                                    newRequestListener?.onSuccess(it?.message!!)
+                                    newRequestListener?.onSuccess(JSONObject(response.body()?.string()).getString(
+                                        "message"
+                                    ))
                                     return
                                 }
 

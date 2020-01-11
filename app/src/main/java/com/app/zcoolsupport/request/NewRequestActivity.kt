@@ -24,6 +24,9 @@ class NewRequestActivity : AppCompatActivity(),KodeinAware,NewRequestListener {
         val viewModel=ViewModelProviders.of(this,factory).get(NewRequestViewModel::class.java)
         databinding.viewmodel=viewModel
         viewModel.newRequestListener=this
+        submit.setOnClickListener {
+            viewModel.sendRequest(it)
+        }
     }
 
     override fun onStarted() {

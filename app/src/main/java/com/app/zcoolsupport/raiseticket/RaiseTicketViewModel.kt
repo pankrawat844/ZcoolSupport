@@ -48,7 +48,7 @@ class RaiseTicketViewModel(val repository: Repository):ViewModel() {
                             raiseTicketListener?.onCompaniesSuccess(list!!)
                             return@let
                         }
-                    raiseTicketListener?.onFailour("Companies not Loaded.")
+//                    raiseTicketListener?.onFailour("Companies not Loaded.")
                 }
 
             })

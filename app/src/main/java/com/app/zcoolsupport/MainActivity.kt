@@ -1,5 +1,6 @@
 package com.app.zcoolsupport
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -22,6 +23,18 @@ class MainActivity : AppCompatActivity() {
         new_request.setOnClickListener {
             Intent(this@MainActivity,NewRequestActivity::class.java).also {
                 startActivity(it)
+            }
+        }
+
+        logout.setOnClickListener {
+            val sharedPreferences=getSharedPreferences("app", Context.MODE_PRIVATE)
+            sharedPreferences.edit().also {
+                it.clear()
+                it.commit()
+            }
+            Intent(this@MainActivity,LoginActivity::class.java).also {
+                startActivity(it)
+                finish()
             }
         }
     }
