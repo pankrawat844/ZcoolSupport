@@ -66,12 +66,12 @@ class RaiseTicketActivity : AppCompatActivity(),KodeinAware,RaiseTicketListener 
     }
 
     override fun onCompaniesSuccess(list: List<String>) {
-        company_name.setItems(list)
-        viewmodel.company=list[0]
-        company_name.setOnItemSelectedListener { view, position, id, item ->
-            viewmodel.company=item.toString()
-//            Toast.makeText(this@RaiseTicketActivity, item.toString(), Toast.LENGTH_SHORT).show()
-        }
+//        company_name.setItems(list)
+//        viewmodel.company=list[0]
+//        company_name.setOnItemSelectedListener { view, position, id, item ->
+//            viewmodel.company=item.toString()
+////            Toast.makeText(this@RaiseTicketActivity, item.toString(), Toast.LENGTH_SHORT).show()
+//        }
     }
 
     override fun onSuccess(msg: String) {
