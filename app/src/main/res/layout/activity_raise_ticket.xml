@@ -15,7 +15,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E1DEDE"
+    android:background="@color/blue"
     android:orientation="vertical"
     >
 
@@ -33,7 +33,7 @@
             android:layout_marginTop="18dp"
             android:fontFamily="@font/maven_pro_bold"
             android:text="Please fill the Complaint."
-            android:textColor="#444444"
+            android:textColor="#fff"
             android:textAllCaps="true"
             android:textSize="18dp" />
 
@@ -45,7 +45,7 @@
             android:layout_marginTop="40dp"
             android:fontFamily="@font/maven_pro_bold"
             android:text="Name"
-            android:textColor="#444444"
+            android:textColor="#fff"
             android:textAllCaps="true"
             android:textSize="18dp" />
 
@@ -70,7 +70,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/maven_pro_bold"
             android:text="Company Name"
-            android:textColor="#444444"
+            android:textColor="#fff"
             android:textAllCaps="true"
             android:textSize="18dp" />
         <EditText
@@ -97,7 +97,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/maven_pro_bold"
             android:text="Contact"
-            android:textColor="#444444"
+            android:textColor="#fff"
             android:textAllCaps="true"
             android:textSize="18dp" />
         <EditText
@@ -120,7 +120,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/maven_pro_bold"
             android:text="Complaint Type"
-            android:textColor="#444444"
+            android:textColor="#fff"
             android:textAllCaps="true"
             android:textSize="18dp" />
         <LinearLayout
@@ -150,7 +150,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/maven_pro_bold"
             android:text="Priority"
-            android:textColor="#444444"
+            android:textColor="#fff"
             android:textAllCaps="true"
             android:textSize="18dp" />
     <LinearLayout
@@ -184,7 +184,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/maven_pro_bold"
             android:text="Type"
-            android:textColor="#444444"
+            android:textColor="#fff"
             android:textAllCaps="true"
             android:textSize="18dp" />
     <LinearLayout
@@ -217,7 +217,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/maven_pro_bold"
             android:text="Complaint"
-            android:textColor="#444444"
+            android:textColor="#fff"
             android:textAllCaps="true"
             android:textSize="18dp" />
         <EditText
