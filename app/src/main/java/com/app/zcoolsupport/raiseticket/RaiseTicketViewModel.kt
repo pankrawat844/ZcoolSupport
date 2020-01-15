@@ -57,7 +57,7 @@ class RaiseTicketViewModel(val repository: Repository):ViewModel() {
 
    suspend fun saveComplaint(view: View){
         raiseTicketListener?.onStarted()
-        if(name!!.isNullOrEmpty()  || phone!!.isNullOrEmpty() || complaint!!.isNullOrEmpty() || !company!!.isNullOrEmpty() )
+        if(name!!.isNullOrEmpty()  || phone!!.isNullOrEmpty() || complaint!!.isNullOrEmpty() || company!!.isNullOrEmpty() )
         {
             raiseTicketListener?.onFailour("All Fields Mandatory.")
             return

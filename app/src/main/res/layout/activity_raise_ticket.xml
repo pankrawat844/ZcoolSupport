@@ -59,6 +59,8 @@
             android:inputType="text"
             android:padding="5dp"
             android:hint=""
+            android:text="@={viewmodel.name}"
+
             android:textSize="15dp"
             android:textColor="#000"
             android:textColorHint="#d3d3d3" />
@@ -82,6 +84,7 @@
             android:padding="5dp"
             android:fontFamily="@font/roboto_light"
             android:hint=""
+            android:text="@={viewmodel.company}"
             app:ms_padding_left="0dp"
             app:ms_padding_right="0dp"
             app:ms_padding_top="0dp"
@@ -108,7 +111,8 @@
             android:background="@drawable/rect_bg"
             android:fontFamily="@font/roboto_light"
             android:hint=""
-            android:text=""
+            android:text="@={viewmodel.phone}"
+
             android:inputType="phone"
             android:textSize="15dp"
             android:textColor="#000"
@@ -229,7 +233,7 @@
             android:background="@drawable/rect_bg"
             android:fontFamily="@font/roboto_light"
             android:hint="Complaint"
-            android:text=""
+            android:text="@={viewmodel.complaint}"
             android:textSize="15dp"
 
             android:padding="5dp"
