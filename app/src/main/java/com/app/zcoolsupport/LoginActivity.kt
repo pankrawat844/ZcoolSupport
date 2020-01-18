@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.app.zcoolsupport.databinding.ActivityLoginBinding
+import com.app.zcoolsupport.databinding.ActivityLoginNewBinding
 import com.app.zcoolsupport.response.LoginResponse
 import com.app.zcoolsupport.utils.hide
 import com.app.zcoolsupport.utils.show
@@ -22,7 +23,7 @@ class LoginActivity : AppCompatActivity(),KodeinAware,LoginInterface {
     val factory:LoginViewmodelFactory by instance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       val databinding:ActivityLoginBinding=DataBindingUtil.setContentView(this,R.layout.activity_login)
+       val databinding:ActivityLoginNewBinding=DataBindingUtil.setContentView(this,R.layout.activity_login_new)
         val viewmodel=ViewModelProviders.of(this,factory).get(LoginViewmodel::class.java)
         databinding.viewmodel=viewmodel
         viewmodel.loginInterface=this

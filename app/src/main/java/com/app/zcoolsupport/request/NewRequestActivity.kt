@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.app.zcoolsupport.R
 import com.app.zcoolsupport.databinding.ActivityNewRequestBinding
+import com.app.zcoolsupport.databinding.ActivityNewRequestNewBinding
 import com.app.zcoolsupport.utils.hide
 import com.app.zcoolsupport.utils.show
 import kotlinx.android.synthetic.main.activity_new_request.*
@@ -20,7 +21,7 @@ class NewRequestActivity : AppCompatActivity(),KodeinAware,NewRequestListener {
     val factory:NewRequestViewModelFactory by instance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val databinding:ActivityNewRequestBinding=DataBindingUtil.setContentView(this,R.layout.activity_new_request)
+        val databinding:ActivityNewRequestNewBinding=DataBindingUtil.setContentView(this,R.layout.activity_new_request_new)
         val viewModel=ViewModelProviders.of(this,factory).get(NewRequestViewModel::class.java)
         databinding.viewmodel=viewModel
         viewModel.newRequestListener=this
