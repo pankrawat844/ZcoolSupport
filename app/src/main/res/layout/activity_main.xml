@@ -78,6 +78,7 @@
                 android:background="@drawable/customborder"
                 android:gravity="center"
                 android:layout_weight="1"
+                android:visibility="gone"
                 android:orientation="vertical">
 
                 <ImageView
@@ -98,44 +99,45 @@
                     android:textColor="@color/black"
                     android:textSize="15dp" />
             </LinearLayout>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-
             <LinearLayout
-                android:id="@+id/logout"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/logout"
-                    android:tint="@color/blue" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/logout"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/open_sans_bold"
-                    android:text="Logout"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/logout"
+                        android:tint="@color/blue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="Logout"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+
+
+
 
     </LinearLayout>
 

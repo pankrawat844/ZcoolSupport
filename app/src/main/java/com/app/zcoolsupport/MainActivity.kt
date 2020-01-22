@@ -20,11 +20,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        new_request.setOnClickListener {
-            Intent(this@MainActivity,NewRequestActivity::class.java).also {
-                startActivity(it)
-            }
-        }
+
 
         logout.setOnClickListener {
             val sharedPreferences=getSharedPreferences("app", Context.MODE_PRIVATE)

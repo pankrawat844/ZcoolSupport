@@ -128,7 +128,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="45dp"
             android:fontFamily="@font/roboto_light"
-            android:text=""
+            android:text="New Request. Click Here"
+            android:onClick="@{viewmodel::newRequest}"
             android:textColor="@color/black"
             android:textSize="15sp" />
 

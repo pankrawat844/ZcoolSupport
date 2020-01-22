@@ -1,12 +1,15 @@
 package com.app.zcoolsupport
 
+import android.content.Intent
 import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModel
 import com.app.zcoolsupport.repo.Repository
+import com.app.zcoolsupport.request.NewRequestActivity
 import com.app.zcoolsupport.response.LoginResponse
 import com.app.zcoolsupport.utils.ApiException
 import com.app.zcoolsupport.utils.NoInternetException
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -64,5 +67,13 @@ class LoginViewmodel(val repository: Repository):ViewModel() {
             }
         }
 
+    }
+
+    fun newRequest(view:View)
+    {
+            Intent(view.context, NewRequestActivity::class.java).also {
+                view.context.startActivity(it)
+
+        }
     }
 }

@@ -9,6 +9,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.app.zcoolsupport.R
 import com.app.zcoolsupport.databinding.ActivityRaiseTicketBinding
+import com.app.zcoolsupport.databinding.ActivityRaiseTicketNewBinding
+import com.app.zcoolsupport.databinding.ActivityRaiseTicketNewBindingImpl
 import com.app.zcoolsupport.utils.hide
 import com.app.zcoolsupport.utils.show
 import kotlinx.android.synthetic.main.activity_raise_ticket.*
@@ -26,7 +28,7 @@ class RaiseTicketActivity : AppCompatActivity(),KodeinAware,RaiseTicketListener 
     val factory:RaiseTicketViewmodelFactory by instance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val databinding:ActivityRaiseTicketBinding=DataBindingUtil.setContentView(this,R.layout.activity_raise_ticket)
+        val databinding:ActivityRaiseTicketNewBinding=DataBindingUtil.setContentView(this,R.layout.activity_raise_ticket_new)
          viewmodel=ViewModelProviders.of(this,factory).get(RaiseTicketViewModel::class.java)
         databinding.viewmodel=viewmodel
         viewmodel.raiseTicketListener=this
